@@ -4,9 +4,11 @@ import Navigation from './pageComponents/navbar'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card'
 import CountdownTimer from './pageComponents/countdownTimer';
+import carShow from '../assets/carShow.jpeg'
+import hwfd from '../assets/hwfd.JPG'
+
 
 function Home() {
   return (
@@ -14,11 +16,11 @@ function Home() {
         <Navigation />
         <Container className="pt-5 mt-5">
           <Row >
-            <Col>
-              <img src={''} alt="Future Festival image here" />
+            <Col className="d-flex justify-content-center align-items-center">
+              <img src={carShow} alt="" style={{maxWidth: '40rem'}} />
             </Col>
             <Col>
-              <h1>Join us for a Family-Friendly Weekend at the COCMG Highland Games and Church Festival!</h1>
+              <h1>Join us for a Family-Friendly Weekend at the Crab Orchard Christian Mountain Games Highland Games and Church Festival!</h1>
               <p>
               Looking for a fun and exciting way to spend the weekend with your family? Come to our COCMG Highland Games and Church Festival, featuring an array of activities that are perfect for all ages. Whether you’re a fan of Highland Games, unique handmade crafts, or mouth-watering BBQ, we’ve got something for everyone!
               </p>
@@ -42,13 +44,13 @@ function Home() {
                 </li>
               </ul>
             </Col>
-            <Col>
-              <img src={''} alt="Future Festival image here" />
+            <Col className="d-flex justify-content-center align-items-center">
+              <img src={hwfd} alt="" style={{maxWidth: '32rem'}} />
             </Col>
           </Row>
           <Row className="mt-3">
-          <Col>
-              <img src={''} alt="Future Festival image here" />
+          <Col className="d-flex justify-content-center align-items-center">
+              <img src={carShow} alt="" style={{maxWidth: '40rem'}} />
           </Col>
           <Col>
             <h2>Why You Should Attend</h2>
@@ -68,13 +70,13 @@ function Home() {
             </ul>
             </Col>
           </Row>
-          <Row className="justify-content-center mt-5">
+          <Row className="justify-content-center mt-5 mb-5">
             <Card style={{ width: '45rem' }} className='d-flex justify-content-center"'>
               <Card.Body className="d-flex flex-column align-items-center justify-content-center text-center">
-                <h3>Time is Counting Down!</h3>
+                <h3>Time is Counting Down...</h3>
                 <Card.Text>
                   <CountdownTimer />
-                  Until the festivities begin!
+                  ...Until the festivities begin!
                 </Card.Text>
               </Card.Body>
             </Card>

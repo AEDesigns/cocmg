@@ -14,7 +14,7 @@ function Navigation() {
 
   return (
     <div>
-        <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
         <Container>
             <Navbar.Brand>
@@ -27,9 +27,10 @@ function Navigation() {
                 alt="React Bootstrap logo"
                 />
                 </NavLink>
-                Crab Orchard Christian Mountain Games
+                Jesus is King!
             </Navbar.Brand>
             </Container>
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
           <Nav>
