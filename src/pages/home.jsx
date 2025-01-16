@@ -8,6 +8,8 @@ import Card from 'react-bootstrap/Card'
 import CountdownTimer from './pageComponents/countdownTimer';
 import carShow from '../assets/carShow.jpeg'
 import hwfd from '../assets/hwfd.JPG'
+import Bookofjohn from './pageComponents/john316';
+import ContactForm from './pageComponents/contactform';
 
 
 function Home() {
@@ -81,6 +83,8 @@ function Home() {
               </Card.Body>
             </Card>
           </Row>
+          <Bookofjohn />
+          <ContactForm />
         </Container>
     </>
   )

@@ -38,7 +38,7 @@ const CountdownTimer = () => {
 
     // Cleanup the interval when the component is unmounted
     return () => clearInterval(interval);
-  }, []);
+  }, [targetDate]);
 
   return (
     <div>
