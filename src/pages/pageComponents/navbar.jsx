@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import logo from '../../logo.svg'
+import logo from '../../assets/logo.png'
 import { NavLink } from "react-router";
 
 function Navigation() {
@@ -16,26 +16,26 @@ function Navigation() {
     <div>
       <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Container>
-            <Navbar.Brand>
-            <NavLink to="/" end>
+        <Container className="d-flex align-items-left">
+          <Navbar.Brand className="d-flex justify-content-center align-items-center">
+            <NavLink to="/" end >
                 <img
                 src={logo}
-                width="30"
-                height="30"
-                className="d-inline-block align-top"
-                alt="React Bootstrap logo"
+                width="100"
+                height="auto"
+                className="d-inline-block align-top mr-5 pr-5"
+                alt="Navigate to the Home Page"
                 />
                 </NavLink>
-                Jesus is King!
+                Jesus Christ is King!
             </Navbar.Brand>
-            </Container>
+        </Container>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
           <Nav>
             <NavDropdown title="Happenings" id="basic-nav-dropdown">
-            <NavLink style={{ textDecoration: 'none' }}to="/highland-games" end>
+            <NavLink style={{ textDecoration: 'none' }} to="/highland-games" end>
               <NavDropdown.Item >Highland Games</NavDropdown.Item>
             </NavLink>
             <NavLink style={{ textDecoration: 'none' }} to="/craft-festival" end>
