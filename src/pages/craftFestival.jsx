@@ -5,7 +5,7 @@ function CraftFestival() {
   return (
     <>
         <Navigation />
-        <p>Car Show</p>
+        <p>Craft Festival</p>
     </>
   )
 }

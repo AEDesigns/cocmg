@@ -1,14 +1,30 @@
+/* Nav Styles */
+
+.anchors {
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  margin-bottom: 5px;
+  justify-content: center;
+  align-items: left;
+  text-decoration: none;
+  color: black
+}
+
+
+
+
 /* Quotation Mark Styles */
 
 .quotationMark {
   font-size: 100px; 
-  color: rgba(0, 0, 0, 0.2);
+  color: black;
   line-height: 0.8;
 }
 
 .quotationMark2 {
   font-size: 100px; 
-  color: rgba(0, 0, 0, 0.2);
+  color: black;
   line-height: 0.8;
   text-align: right;
 }
