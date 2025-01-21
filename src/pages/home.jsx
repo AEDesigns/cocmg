@@ -83,8 +83,12 @@ function Home() {
               </Card.Body>
             </Card>
           </Row>
-          <Bookofjohn />
-          <ContactForm />
+          <Row>
+            <Bookofjohn />
+          </Row>
+          <Row>
+            <ContactForm />
+          </Row>
         </Container>
     </>
   )
