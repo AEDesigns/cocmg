@@ -1,12 +1,15 @@
 import React from 'react'
 import Navigation from './pageComponents/navbar'
+import AthletesList from './pageComponents/renderAthleteRegTable'
+import RegistrationForm from './pageComponents/registrationForm'
 
 function HighlandGames() {
   return (
     <>
         <Navigation />
-        <p>Highland Games</p>
-    </>
+        <RegistrationForm />
+        <AthletesList />
+    </> 
   )
 }
 
