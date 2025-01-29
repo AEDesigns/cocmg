@@ -30,6 +30,7 @@ const RegistrationForm = () => {
       console.error("Error registering:", error);
       setError("Registration failed, please try again.");
     }
+    window.location.reload(true);
   };
 
   return (
@@ -37,8 +38,16 @@ const RegistrationForm = () => {
       <h2>Register for a Class</h2>
 
       {/* Accessibility alerts */}
-      {error && <p role="alert" style={{ color: "red" }}>{error}</p>}
-      {successMessage && <p role="alert" style={{ color: "green" }}>{successMessage}</p>}
+      {error && (
+        <p role="alert" style={{ color: "red" }}>
+          {error}
+        </p>
+      )}
+      {successMessage && (
+        <p role="alert" style={{ color: "green" }}>
+          {successMessage}
+        </p>
+      )}
 
       <form onSubmit={handleSubmit} aria-label="Registration Form">
         <div>
@@ -51,9 +60,9 @@ const RegistrationForm = () => {
             onChange={(e) => setFullName(e.target.value)}
             required
             aria-required="true"
+            placeholder="Enter your full name"
             aria-describedby="nameHelp"
           />
-          <small id="nameHelp">Enter your full name</small>
         </div>
 
         <div>
