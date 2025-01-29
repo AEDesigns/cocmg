@@ -4,49 +4,68 @@ import axios from "axios";
 const RegistrationForm = () => {
   const [fullName, setFullName] = useState("");
   const [className, setClassName] = useState("");
+  const [error, setError] = useState(null);
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setError(null);
+    setSuccessMessage("");
 
     if (!fullName || !className) {
-      alert("Please fill in both fields.");
+      setError("Please fill in both fields.");
       return;
     }
 
-    // Send POST request to backend
     try {
-      await axios.post("http://localhost:3000/athletics", {
+      const response = await axios.post("http://localhost:3000/register", {
         name: fullName,
         class: className,
       });
-      alert("Registration successful!");
-      setFullName(""); // Reset the form
-      setClassName(""); // Reset the form
+
+      setSuccessMessage("Registration successful!");
+      setFullName("");
+      setClassName("");
     } catch (error) {
       console.error("Error registering:", error);
-      alert("Registration failed, please try again.");
+      setError("Registration failed, please try again.");
     }
   };
 
   return (
     <div>
       <h2>Register for a Class</h2>
-      <form onSubmit={handleSubmit}>
+
+      {/* Accessibility alerts */}
+      {error && <p role="alert" style={{ color: "red" }}>{error}</p>}
+      {successMessage && <p role="alert" style={{ color: "green" }}>{successMessage}</p>}
+
+      <form onSubmit={handleSubmit} aria-label="Registration Form">
         <div>
-          <label>Full Name</label>
+          <label htmlFor="fullName">Full Name</label>
           <input
             type="text"
+            id="fullName"
+            name="fullName"
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
             required
+            aria-required="true"
+            aria-describedby="nameHelp"
           />
+          <small id="nameHelp">Enter your full name</small>
         </div>
+
         <div>
-          <label>Class</label>
+          <label htmlFor="className">Class</label>
           <select
+            id="className"
+            name="className"
             value={className}
             onChange={(e) => setClassName(e.target.value)}
             required
+            aria-required="true"
+            aria-describedby="classHelp"
           >
             <option value="">Select a class</option>
             <option value="A Class">A Class</option>
@@ -55,7 +74,9 @@ const RegistrationForm = () => {
             <option value="Mens Masters">Mens Masters</option>
             <option value="Womens">Womens</option>
           </select>
+          <small id="classHelp">Choose your competition class</small>
         </div>
+
         <button type="submit">Register</button>
       </form>
     </div>
